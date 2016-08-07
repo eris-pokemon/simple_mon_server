@@ -9,12 +9,5 @@ class MonsterDex(models.Model):
     monster_number = models.IntegerField(primary_key=True)
     monster_name = models.CharField(max_length=64)
 
-
-class Monster(models.Model):
-    """
-    Stores a specific monster instance.
-    This includes what sort of monster it is, which player owns it and the nickname the player has given it.
-    """
-    monster_type = models.ForeignKey(MonsterDex, on_delete=models.CASCADE)
-    monster_owner = models.ForeignKey('player.Player', on_delete=models.CASCADE)
-    monster_nickname = models.CharField(max_length=32)
+    def __str__(self):
+        return str(self.monster_name)

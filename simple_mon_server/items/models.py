@@ -8,3 +8,6 @@ class Item(models.Model):
     """
     name = models.CharField(max_length=256, unique=True)
     description = models.TextField()
+
+    def __str__(self):
+        return str(self.name)
